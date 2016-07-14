@@ -1,0 +1,57 @@
++--------+----------+------------------------------------------------------+------------------------------------+----------------------------------------------------------+------------+
+| Domain | Method   | URI                                                  | Name                               | Action                                                   | Middleware |
++--------+----------+------------------------------------------------------+------------------------------------+----------------------------------------------------------+------------+
+|        | GET|HEAD | /                                                    |                                    | Closure                                                  |            |
+|        | GET|HEAD | backend/auth/login                                   | auth.login                         | App\Http\Controllers\Auth\AuthController@getLogin        | guest      |
+|        | POST     | backend/auth/login                                   | auth.login                         | App\Http\Controllers\Auth\AuthController@postLogin       | guest      |
+|        | GET|HEAD | backend/auth/logout                                  | auth.logout                        | App\Http\Controllers\Auth\AuthController@getLogout       |            |
+|        | POST     | backend/blog                                         | backend.blog.store                 | App\Http\Controllers\publicacionController@store         | auth       |
+|        | GET|HEAD | backend/blog                                         | backend.blog.index                 | App\Http\Controllers\publicacionController@index         | auth       |
+|        | GET|HEAD | backend/blog/create                                  | backend.blog.create                | App\Http\Controllers\publicacionController@create        | auth       |
+|        | PUT      | backend/blog/{blog}                                  | backend.blog.update                | App\Http\Controllers\publicacionController@update        | auth       |
+|        | PATCH    | backend/blog/{blog}                                  |                                    | App\Http\Controllers\publicacionController@update        | auth       |
+|        | DELETE   | backend/blog/{blog}                                  | backend.blog.destroy               | App\Http\Controllers\publicacionController@destroy       | auth       |
+|        | GET|HEAD | backend/blog/{blog}                                  | backend.blog.show                  | App\Http\Controllers\publicacionController@show          | auth       |
+|        | GET|HEAD | backend/blog/{blog}/edit                             | backend.blog.edit                  | App\Http\Controllers\publicacionController@edit          | auth       |
+|        | GET|HEAD | backend/blog_categoria                               | backend.blog_categoria.index       | App\Http\Controllers\blogCategoriaController@index       | auth       |
+|        | POST     | backend/blog_categoria                               | backend.blog_categoria.store       | App\Http\Controllers\blogCategoriaController@store       | auth       |
+|        | GET|HEAD | backend/blog_categoria/create                        | backend.blog_categoria.create      | App\Http\Controllers\blogCategoriaController@create      | auth       |
+|        | PUT      | backend/blog_categoria/{blog_categoria}              | backend.blog_categoria.update      | App\Http\Controllers\blogCategoriaController@update      | auth       |
+|        | PATCH    | backend/blog_categoria/{blog_categoria}              |                                    | App\Http\Controllers\blogCategoriaController@update      | auth       |
+|        | DELETE   | backend/blog_categoria/{blog_categoria}              | backend.blog_categoria.destroy     | App\Http\Controllers\blogCategoriaController@destroy     | auth       |
+|        | GET|HEAD | backend/blog_categoria/{blog_categoria}              | backend.blog_categoria.show        | App\Http\Controllers\blogCategoriaController@show        | auth       |
+|        | GET|HEAD | backend/blog_categoria/{blog_categoria}/edit         | backend.blog_categoria.edit        | App\Http\Controllers\blogCategoriaController@edit        | auth       |
+|        | GET|HEAD | backend/catalogo                                     | backend.catalogo.index             | App\Http\Controllers\catalogoController@index            | auth       |
+|        | POST     | backend/catalogo                                     | backend.catalogo.store             | App\Http\Controllers\catalogoController@store            | auth       |
+|        | GET|HEAD | backend/catalogo/create                              | backend.catalogo.create            | App\Http\Controllers\catalogoController@create           | auth       |
+|        | DELETE   | backend/catalogo/{catalogo}                          | backend.catalogo.destroy           | App\Http\Controllers\catalogoController@destroy          | auth       |
+|        | PATCH    | backend/catalogo/{catalogo}                          |                                    | App\Http\Controllers\catalogoController@update           | auth       |
+|        | PUT      | backend/catalogo/{catalogo}                          | backend.catalogo.update            | App\Http\Controllers\catalogoController@update           | auth       |
+|        | GET|HEAD | backend/catalogo/{catalogo}                          | backend.catalogo.show              | App\Http\Controllers\catalogoController@show             | auth       |
+|        | GET|HEAD | backend/catalogo/{catalogo}/edit                     | backend.catalogo.edit              | App\Http\Controllers\catalogoController@edit             | auth       |
+|        | POST     | backend/catalogo_categoria                           | backend.catalogo_categoria.store   | App\Http\Controllers\catologoCategoriaController@store   | auth       |
+|        | GET|HEAD | backend/catalogo_categoria                           | backend.catalogo_categoria.index   | App\Http\Controllers\catologoCategoriaController@index   | auth       |
+|        | GET|HEAD | backend/catalogo_categoria/create                    | backend.catalogo_categoria.create  | App\Http\Controllers\catologoCategoriaController@create  | auth       |
+|        | GET|HEAD | backend/catalogo_categoria/{catalogo_categoria}      | backend.catalogo_categoria.show    | App\Http\Controllers\catologoCategoriaController@show    | auth       |
+|        | PATCH    | backend/catalogo_categoria/{catalogo_categoria}      |                                    | App\Http\Controllers\catologoCategoriaController@update  | auth       |
+|        | PUT      | backend/catalogo_categoria/{catalogo_categoria}      | backend.catalogo_categoria.update  | App\Http\Controllers\catologoCategoriaController@update  | auth       |
+|        | DELETE   | backend/catalogo_categoria/{catalogo_categoria}      | backend.catalogo_categoria.destroy | App\Http\Controllers\catologoCategoriaController@destroy | auth       |
+|        | GET|HEAD | backend/catalogo_categoria/{catalogo_categoria}/edit | backend.catalogo_categoria.edit    | App\Http\Controllers\catologoCategoriaController@edit    | auth       |
+|        | GET|HEAD | backend/dashboard                                    | backend.dashboard                  | App\Http\Controllers\mainController@index                | auth       |
+|        | POST     | backend/galeria                                      | backend.galeria.store              | App\Http\Controllers\galeriaController@store             | auth       |
+|        | GET|HEAD | backend/galeria                                      | backend.galeria.index              | App\Http\Controllers\galeriaController@index             | auth       |
+|        | GET|HEAD | backend/galeria/create                               | backend.galeria.create             | App\Http\Controllers\galeriaController@create            | auth       |
+|        | DELETE   | backend/galeria/{galeria}                            | backend.galeria.destroy            | App\Http\Controllers\galeriaController@destroy           | auth       |
+|        | PUT      | backend/galeria/{galeria}                            | backend.galeria.update             | App\Http\Controllers\galeriaController@update            | auth       |
+|        | GET|HEAD | backend/galeria/{galeria}                            | backend.galeria.show               | App\Http\Controllers\galeriaController@show              | auth       |
+|        | PATCH    | backend/galeria/{galeria}                            |                                    | App\Http\Controllers\galeriaController@update            | auth       |
+|        | GET|HEAD | backend/galeria/{galeria}/edit                       | backend.galeria.edit               | App\Http\Controllers\galeriaController@edit              | auth       |
+|        | POST     | backend/galeria_categoria                            | backend.galeria_categoria.store    | App\Http\Controllers\galeriaCategoriaController@store    | auth       |
+|        | GET|HEAD | backend/galeria_categoria                            | backend.galeria_categoria.index    | App\Http\Controllers\galeriaCategoriaController@index    | auth       |
+|        | GET|HEAD | backend/galeria_categoria/create                     | backend.galeria_categoria.create   | App\Http\Controllers\galeriaCategoriaController@create   | auth       |
+|        | DELETE   | backend/galeria_categoria/{galeria_categoria}        | backend.galeria_categoria.destroy  | App\Http\Controllers\galeriaCategoriaController@destroy  | auth       |
+|        | PATCH    | backend/galeria_categoria/{galeria_categoria}        |                                    | App\Http\Controllers\galeriaCategoriaController@update   | auth       |
+|        | PUT      | backend/galeria_categoria/{galeria_categoria}        | backend.galeria_categoria.update   | App\Http\Controllers\galeriaCategoriaController@update   | auth       |
+|        | GET|HEAD | backend/galeria_categoria/{galeria_categoria}        | backend.galeria_categoria.show     | App\Http\Controllers\galeriaCategoriaController@show     | auth       |
+|        | GET|HEAD | backend/galeria_categoria/{galeria_categoria}/edit   | backend.galeria_categoria.edit     | App\Http\Controllers\galeriaCategoriaController@edit     | auth       |
++--------+----------+------------------------------------------------------+------------------------------------+----------------------------------------------------------+------------+
